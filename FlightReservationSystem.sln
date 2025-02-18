@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightReservationSystem.App", "FlightReservationSystem.App\FlightReservationSystem.App.csproj", "{5A6B17A7-A105-47D9-A767-0150ACA039A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightReservationSystem.Util", "FlightReservationSystem.Util\FlightReservationSystem.Util.csproj", "{FDB67F15-D45A-4C7C-9542-2B368B00FCAF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightReservationSystem.Model", "FlightReservationSystem.Model\FlightReservationSystem.Model.csproj", "{0B8AC2B6-89EC-4573-84C8-5EF9D9D6A407}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightReservationSystem.Data", "FlightReservationSystem.Data\FlightReservationSystem.Data.csproj", "{E54345B1-F0C1-4A97-91A0-F53E1399E7F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightReservationSystem.DbMigrate", "FlightReservationSystem.DbMigrate\FlightReservationSystem.DbMigrate.csproj", "{D9BAF763-4467-4087-8CDB-0D798EA6195A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightReservationSystem.Service", "FlightReservationSystem.Service\FlightReservationSystem.Service.csproj", "{2A73DB65-FA42-4850-BA6F-BEA6307D26A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A6B17A7-A105-47D9-A767-0150ACA039A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A6B17A7-A105-47D9-A767-0150ACA039A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A6B17A7-A105-47D9-A767-0150ACA039A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A6B17A7-A105-47D9-A767-0150ACA039A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB67F15-D45A-4C7C-9542-2B368B00FCAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB67F15-D45A-4C7C-9542-2B368B00FCAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB67F15-D45A-4C7C-9542-2B368B00FCAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB67F15-D45A-4C7C-9542-2B368B00FCAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B8AC2B6-89EC-4573-84C8-5EF9D9D6A407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B8AC2B6-89EC-4573-84C8-5EF9D9D6A407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B8AC2B6-89EC-4573-84C8-5EF9D9D6A407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B8AC2B6-89EC-4573-84C8-5EF9D9D6A407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E54345B1-F0C1-4A97-91A0-F53E1399E7F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E54345B1-F0C1-4A97-91A0-F53E1399E7F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E54345B1-F0C1-4A97-91A0-F53E1399E7F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E54345B1-F0C1-4A97-91A0-F53E1399E7F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9BAF763-4467-4087-8CDB-0D798EA6195A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9BAF763-4467-4087-8CDB-0D798EA6195A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9BAF763-4467-4087-8CDB-0D798EA6195A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9BAF763-4467-4087-8CDB-0D798EA6195A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A73DB65-FA42-4850-BA6F-BEA6307D26A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A73DB65-FA42-4850-BA6F-BEA6307D26A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A73DB65-FA42-4850-BA6F-BEA6307D26A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A73DB65-FA42-4850-BA6F-BEA6307D26A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {118B5B94-4584-4748-A732-DE08B19C2CA1}
+	EndGlobalSection
+EndGlobal
