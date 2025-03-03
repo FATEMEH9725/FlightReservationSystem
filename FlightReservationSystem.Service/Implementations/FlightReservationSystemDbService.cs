@@ -105,6 +105,116 @@ namespace FlightReservationSystem.Service.Implementations
 
             return ticketsBooked;
         }
-        
+
+        public async Task<List<ReservedSeatDto>> GetReservedSeat(Guid id)
+        {
+            var reservedSeats = Db.Set<TicketsBooked>()
+                .Where(t => t.Flight_Id == id && t.IsActive == true)
+                .Select(s => s.SeatNumber)
+                .ToList();
+
+            var flightSeats = Db.Set<Flight>()
+                .Where(f => f.Id == id)
+                .Select(s => s.SeatsCount)
+                .FirstOrDefault();
+
+            var seatsStatus = new List<ReservedSeatDto>();
+
+            int notBooked = 0;
+            int maxNotBooked = 0;
+
+            int start = 0;
+            int startNotBooked = 0;
+            int EndNotBooked = 0;
+
+            for (var i = 1; i <= flightSeats; i++)
+            {
+                if (reservedSeats.Contains(i.ToString()))
+                {
+                    notBooked = 0;
+
+                    seatsStatus.Add(new ReservedSeatDto
+                    {
+                        SeatNumber = i.ToString(),
+                        ReservedStatus = Model.Enum.ReservedStatus.Reserved
+                    });
+                }
+                else
+                {
+                    if (notBooked == 0)
+                    {
+                        start = i;
+                    }
+
+                    notBooked++;
+                    
+                    if (notBooked > maxNotBooked)
+                    {
+                        maxNotBooked = notBooked;
+                        startNotBooked = start;
+                        EndNotBooked = i;
+                    }
+
+                    seatsStatus.Add(new ReservedSeatDto
+                    {
+                        SeatNumber= i.ToString(),
+                        ReservedStatus= Model.Enum.ReservedStatus.NotReserved
+                    });
+                }
+            }
+
+            return seatsStatus;
+        }
+
+        public async Task<MaxNotBookedSeatDto> GetMaxNotBookedSeat(Guid id)
+        {
+            var reservedSeats = Db.Set<TicketsBooked>()
+                .Where(t => t.Flight_Id == id && t.IsActive == true)
+                .Select(s => s.SeatNumber)
+                .ToList();
+
+            var flightSeats = Db.Set<Flight>()
+                .Where(f => f.Id == id)
+                .Select(s => s.SeatsCount)
+                .FirstOrDefault();
+
+            int notBooked = 0;
+            int maxNotBooked = 0;
+
+            int start = 0;
+            int startNotBooked = 0;
+            int EndNotBooked = 0;
+
+            for (var i = 1; i <= flightSeats; i++)
+            {
+                if (reservedSeats.Contains(i.ToString()))
+                {
+                    notBooked = 0;
+                }
+                else
+                {
+                    if (notBooked == 0)
+                    {
+                        start = i;
+                    }
+
+                    notBooked++;
+
+                    if (notBooked > maxNotBooked)
+                    {
+                        maxNotBooked = notBooked;
+                        startNotBooked = start;
+                        EndNotBooked = i;
+                    }
+                }
+            }
+
+            return new MaxNotBookedSeatDto
+            {
+                MaxNotBooked = maxNotBooked,
+                StartNotBooked = startNotBooked,
+                EndNotBooked = EndNotBooked
+            };
+        }
     }
 }

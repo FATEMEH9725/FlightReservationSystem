@@ -8,5 +8,7 @@ namespace FlightReservationSystem.Service.Contracts
         Task<List<FlightDto>> GetFlights();
         Task<List<FlightDto>> GetUserFlights(Guid userId);
         Task SaveFlightBooking(Guid flightId, Guid userId, string seatNumber);
+        Task<List<ReservedSeatDto>> GetReservedSeat(Guid id);
+        Task<MaxNotBookedSeatDto> GetMaxNotBookedSeat(Guid id);
     }
 }

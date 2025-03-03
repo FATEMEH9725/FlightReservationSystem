@@ -22,6 +22,18 @@ namespace Fly.App.Controllers
         {
             return await _flightReservationSystemDbService.GetFlights();
         }
+
+        [HttpGet("GetReservedSeat/{id}")]
+        public async Task<List<ReservedSeatDto>> GetReservedSeat(Guid id)
+        {
+            return await _flightReservationSystemDbService.GetReservedSeat(id);
+        }
+
+        [HttpGet("GetMaxNotBookedSeat/{id}")]
+        public async Task<MaxNotBookedSeatDto> GetMaxNotBookedSeat(Guid id)
+        {
+            return await _flightReservationSystemDbService.GetMaxNotBookedSeat(id);
+        }
     }
 
 }
